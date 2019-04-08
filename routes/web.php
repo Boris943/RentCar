@@ -34,3 +34,5 @@ Route::group(['middleware'=>'auth'],function(){
 });
 
 Route::post('/booking','BookingController@index');
+Route::post('/extras/{id}','BookingController@step1');
+

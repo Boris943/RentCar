@@ -28,7 +28,10 @@
                 Gorivo: {{$item->fuel}} <br>
                 Mjenjac: {{$item->transmission}} <br>
                 Klima: @if($item->ac==1) Ima @else Nema @endif <br>
-                Cjena po danu: {{$item->price}} € <br>
+                Cjena po danu: {{$item->price}} € 
+                <span class="float-right"><form action="/extras/{{$item->id}}" method="get">
+                <button type="submit" class="btn btn-primary">Izaberi</button>    
+                </form></span>
             </div>
         </div>
         @endforeach
