@@ -21,10 +21,10 @@ class CreateProcessingRqsTable extends Migration
             $table->string("drop_off_location");
             $table->date("drop_off_date");
             $table->time("drop_off_time");
-            $table->bigInteger("car_id");
-            $table->bigInteger('sum_price');
+            $table->integer("car_id");
+            $table->double('sum_price');
             $table->string("full_name");
-            $table->bigInteger("age");
+            $table->integer("age");
             $table->string("email");
             $table->string("phone_num");
             $table->string("country");

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Vehicle;
+use Carbon\Carbon;
 use App\ProcessingRq;
 use Illuminate\Http\Request;
 
@@ -40,9 +41,20 @@ class BookingController extends Controller
     }
 
     public function step1($id)
-    { 
+    {
         $vehicle = Vehicle::findOrFail($id);
-        $req=session()->get('step-1');
-        // to be continued.....
+        $req = session()->get('step-1');
+        
+        $startDate = Carbon::parse($req['pick_up_date']);
+        $endDate = Carbon::parse($req['drop_off_date']);
+       // dd($endDate->diffInDays($startDate));
+
+        $req1 = [
+            "car_id" => $vehicle->id,
+            "sum_price" => ($vehicle->price * ($endDate->diffInDays($startDate)))
+        ];
+        session()->put('step-1', array_merge($req,$req1));
+        
+        return view('extras');
     }
 }
