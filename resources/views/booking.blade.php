@@ -14,9 +14,10 @@
 </head>
 <body>
     <div class="container">
-
-        @foreach ($nonBookedVehicles as $item)
-        <div class="card my-3">
+    @if ($nonBookedVehicles)
+        
+    @foreach ($nonBookedVehicles as $item)
+    <div class="card my-3">
             <div class="card-header">
                 Id auta: {{$item->id}} <br>
                 Naziv auta: {{$item->car_name}}
@@ -29,12 +30,17 @@
                 Mjenjac: {{$item->transmission}} <br>
                 Klima: @if($item->ac==1) Ima @else Nema @endif <br>
                 Cjena po danu: {{$item->price}} € 
-                <span class="float-right"><form action="/extras/{{$item->id}}" method="get">
-                <button type="submit" class="btn btn-primary">Izaberi</button>    
-                </form></span>
+                <span class="float-right">
+                    <a href="/vehicles/{{$item->id}}" class="btn btn-primary">Izaberi</a>    
+                </span>
             </div>
         </div>
         @endforeach
+    @else
+       <h1>
+           Nema Slobodnih Vozila u ovom terminu
+       </h1> 
+    @endif
     
     </div>
 </body>

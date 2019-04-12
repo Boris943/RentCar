@@ -12,4 +12,10 @@ class ProcessingRq extends Model
     {
         return $this->belongsTo(Vehicle::class);    
     }
+
+    public function extra()
+    {
+        return $this->belongsToMany(Extras::class);
+    }
+
 }

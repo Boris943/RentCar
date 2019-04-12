@@ -13,6 +13,15 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </head>
 <body>
-     staaaaaa ???????
+     <div class="container">
+         <h3>Extra</h3>
+         <form action="/extras" method="post">
+            @csrf
+            @foreach ($ext as $item)
+            <input type="checkbox" value="{{ $item->id }}" name="extras[]">{{ $item->extra_name }}
+        @endforeach
+        <button type="submit" class="btn btn-primary">Dalje</button>
+    </form>
+     </div>
 </body>
 </html>

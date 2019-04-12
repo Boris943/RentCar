@@ -71,9 +71,21 @@
             } 
             </style>  
     </head>
+
     <body>
+     @if ($errors->any())
+         <div class="alert alert-danger alert-dissmisable fade show">
+             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                 <span aria-hidden="true">&times;</span>
+             </button>
+             @foreach ($errors->all() as $error)
+                 <li><strong>{{ $error }}</strong></li>       
+             @endforeach
+         </div>
+     @endif
+ 
+
        <div class="position-ref full-height">
-            
             <div class="d-flex justify-content-between form-group">
                 <form action="/booking" method="post">
                     @csrf

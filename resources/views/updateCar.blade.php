@@ -3,7 +3,7 @@
 @section('content')
 <div class="container justify-content-center">
  <div class="card">
-        <form action="#" method="POST">
+        <form action="/home/listCar/{{$vehicle->id}}" method="POST">
             <div class="row mx-3">
                 @csrf
                 @method('PUT')

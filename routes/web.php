@@ -17,10 +17,19 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/booking','BookingController@booking');
+Route::post('/booking','BookingController@index');
+Route::get('/extras','BookingController@extras');
+Route::post('/extras','BookingController@step2');
+Route::get('/vehicles/{id}','BookingController@step1');
+Route::get('/personalinfo','BookingController@personalInfo');
+Route::post('/final','BookingController@stepfin');
+
 Auth::routes([
     'register'=>false,
     'reset'=>false
 ]);
+
 
 Route::group(['middleware'=>'auth'],function(){    
 
@@ -33,6 +42,4 @@ Route::group(['middleware'=>'auth'],function(){
     Route::put('/home/listCar/{id}','HomeController@updateCar');
 });
 
-Route::post('/booking','BookingController@index');
-Route::get('/extras/{id}','BookingController@step1');
 
