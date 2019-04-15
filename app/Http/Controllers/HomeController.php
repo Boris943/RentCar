@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Vehicle;
+use App\ProcessingRq;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -106,6 +107,12 @@ class HomeController extends Controller
     {
        Vehicle::findOrFail($id)->delete();
        return back();
+    }
+
+    public function reqlist()
+    {   
+        $req=ProcessingRq::all();
+        return view('listReq',compact('req'));
     }
     
 }

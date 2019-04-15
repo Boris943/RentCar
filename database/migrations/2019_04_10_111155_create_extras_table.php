@@ -17,7 +17,7 @@ class CreateExtrasTable extends Migration
             $table->bigIncrements('id');
             $table->string("extra_name");
             $table->double("price")->default(0);
-            $table->timestamps();
+           
         });
     }
 

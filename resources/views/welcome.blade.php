@@ -99,11 +99,11 @@
                     </div>
                     <div class="form-group my-3 mx-3">
                         <label>Datum Preuzimanja :</label>
-                        <input name="pick_up_date" class="form-control" type="date">
+                        <input onchange="myFunction()" id="mdi" name="pick_up_date" class="form-control" type="date">
                     </div>
                     <div class="form-group my-3 mx-3">
                         <label>Datum Vracanja :</label>
-                        <input name="drop_off_date" class="form-control" type="date">
+                        <input id="mdd" name="drop_off_date" class="form-control" type="date">
                     </div>
                     <div class="form-group my-3 mx-3">
                         <label>Vrijeme Preuzimanja:</label>
@@ -117,6 +117,19 @@
                 </form>
             </div>
                  
-        </div>    
+        </div> 
+        
+        <script>
+        var now = new Date(),
+            minDate = now.toISOString().substring(0,10);
+        $('#mdi').prop('min', minDate);  
+            
+            function myFunction() {
+                var then = new Date($('#mdi').val()),
+                minDate = then.toISOString().substring(0,10);
+                $('#mdd').prop('min',minDate);
+            } 
+        
+        </script>
         </body>
 </html>

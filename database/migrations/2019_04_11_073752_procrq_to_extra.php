@@ -13,7 +13,7 @@ class ProcrqToExtra extends Migration
      */
     public function up()
     {
-        Schema::table('extra_procesingrq', function (Blueprint $table) {
+        Schema::create('extra_procesingrq', function (Blueprint $table) {
             $table->bigInteger("procesingrq_id");
             $table->bigInteger("extra_id");
 
@@ -28,8 +28,6 @@ class ProcrqToExtra extends Migration
      */
     public function down()
     {
-        Schema::table('extra_procesingrq', function (Blueprint $table) {
-            //
-        });
+        Schema::drop('extra_procesingrq');
     }
 }

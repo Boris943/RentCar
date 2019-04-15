@@ -16,7 +16,7 @@
 
                     <a href="/home/addCar" class="btn btn-secondary">Dodaj auto</a>
                     <a href="/home/listCar" class="btn btn-primary">Pregled auta</a>
-                    <a href="#"class="btn btn-success">Obrada zahtjeva</a>
+                    <a href="/home/listReq" class="btn btn-success">Obrada zahtjeva</a>
                 </div>
             </div>
         </div>

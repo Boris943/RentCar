@@ -67,7 +67,7 @@ class BookingController extends Controller
     public function extras()
     {
         $ext = Extras::all();
-
+                   
         return view('extras', compact("ext"));
     }
 
@@ -79,9 +79,12 @@ class BookingController extends Controller
         $endDate = Carbon::parse($req['drop_off_date']);
 
         $result = $endDate->diffInDays($startDate);
+        
+        $additions= Extras::find(request()->get("extras"));
 
-        $req["sum_price"] = $req["sum_price"] + $result * Extras::find(request()->get("extras"))->map->price->sum();
-
+        $req["sum_price"] = $req["sum_price"] + $result * $additions->map->price->sum();
+        $req["extras"] = $additions->map->id;
+        
         session()->put('step-1', $req);
 
         return redirect('/personalinfo');
@@ -104,7 +107,7 @@ class BookingController extends Controller
 
         $req = session()->get('step-1');
 
-        ProcessingRq::create([
+        $procReq = ProcessingRq::create([
             "pick_up_location" => $req["pick_up_location"],
             "pick_up_date" => $req["pick_up_date"],
             "pick_up_time" => $req["pick_up_time"],
@@ -120,6 +123,8 @@ class BookingController extends Controller
             "country" => request("country"),
             "message" => request("message")
         ]);
+
+        $procReq->extras()->sync($req["extras"]);
 
         return redirect('/');
     }

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Laravel\Telescope\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,6 +41,7 @@ Route::group(['middleware'=>'auth'],function(){
     Route::delete('/home/listCar/{id}','HomeController@destroyCar');
     Route::get('/home/listCar/{id}','HomeController@editCar');
     Route::put('/home/listCar/{id}','HomeController@updateCar');
+    Route::get('/home/listReq','HomeController@reqlist');
 });
 
 

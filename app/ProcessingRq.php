@@ -13,9 +13,9 @@ class ProcessingRq extends Model
         return $this->belongsTo(Vehicle::class);    
     }
 
-    public function extra()
+    public function extras()
     {
-        return $this->belongsToMany(Extras::class);
+        return $this->belongsToMany(Extras::class, 'extra_procesingrq', 'procesingrq_id', 'extra_id');
     }
 
 }
