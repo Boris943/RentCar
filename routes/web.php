@@ -42,6 +42,9 @@ Route::group(['middleware'=>'auth'],function(){
     Route::get('/home/listCar/{id}','HomeController@editCar');
     Route::put('/home/listCar/{id}','HomeController@updateCar');
     Route::get('/home/listReq','HomeController@reqlist');
+    Route::post('/home/listReq/deny/{id}','HomeController@deny');
+    Route::post('/home/listReq/approved/{id}','HomeController@approved');    
+    Route::get('/home/listReq/detailedInfo/{id}','HomeController@detailedview');
 });
 
 

@@ -115,4 +115,30 @@ class HomeController extends Controller
         return view('listReq',compact('req'));
     }
     
+    public function approved($id)
+    {
+        ProcessingRq::findOrFail($id)->update([
+            "status"=>"Aktivan"
+        ]);
+        return back();
+    }
+    
+    public function deny($id)
+    {
+        $req=ProcessingRq::findOrFail($id);
+        Vehicle::findOrFail($req->car_id)->update([
+            "booked"=>false
+        ]);
+        $req->update([
+            "status"=>"Odbijen"
+        ]);
+        return back();
+    }
+    
+    public function detailedview($id)
+    {
+        $req=ProcessingRq::findOrFail($id);
+        return view('detailedInfo',compact("req"));
+    }
+    
 }

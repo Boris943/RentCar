@@ -28,6 +28,7 @@ class CreateProcessingRqsTable extends Migration
             $table->string("email");
             $table->string("phone_num");
             $table->string("country");
+            $table->string("status")->default("Ceka se");
             $table->text("message")->nullable();
             $table->timestamps();
 
