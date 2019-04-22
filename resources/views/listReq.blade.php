@@ -29,6 +29,14 @@
                         </form>    
                     </div>
                     </th>
+                @elseif($item->status == "Aktivan")
+                <th>
+                    <form action="/home/listReq/returned/{{$item->id}}" method="post">
+                        @csrf
+                        <button class="btn mx-3" type="submit">Update na Vracen status</button>
+                    </form>
+                </th>
+                @elseif($item->status == "Vracen")
                 @endif
             </tr>
         @endforeach

@@ -84,8 +84,9 @@
          </div>
      @endif
  
+    <div class="d-flex">
 
-       <div class="position-ref full-height">
+        <div class="position-ref full-height">
             <div class="d-flex justify-content-between form-group">
                 <form action="/booking" method="post">
                     @csrf
@@ -118,6 +119,11 @@
             </div>
                  
         </div> 
+
+        <div class="float-right">
+            <h1>Rent a Car</h1>
+        </div>
+    </div>
         
         <script>
         var now = new Date(),

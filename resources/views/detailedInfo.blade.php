@@ -6,37 +6,62 @@
     <table class="table">
         <tr>
             <th>Lokacija Preuzimanja</th>
+            <td>{{$req->pick_up_location}}</td>    
+        </tr>
+        <tr>    
             <th>Datum Preuzimanja</th>
+            <td>{{$req->pick_up_date}}</td>
+        </tr>
+        <tr>    
             <th>Vrijeme Preuzimanja</th>
+            <td>{{$req->pick_up_time}}</td>
+        </tr>
+        <tr>   
             <th>Lokacija Ostavljanja</th>
-            <th>Datum Ostavljanja</th>
-            <th>Vrijeme Ostavljanja</th>
-            <th>ID auta</th>
-            <th>Cijena</th>
-            <th>Ime i prezime</th>
-            <th>Godiste</th>
-            <th>Email</th>
-            <th>Telefonski Broj</th>
-            <th>Zemlja</th>
-            <th>Poruka</th>
+            <td>{{$req->drop_off_location}}</td>
         </tr>
         <tr>
-            <th>{{$req->pick_up_location}}</th>
-            <th>{{$req->pick_up_date}}</th>
-            <th>{{$req->pick_up_time}}</th>
-            <th>{{$req->drop_off_location}}</th>
-            <th>{{$req->drop_off_date}}</th>
-            <th>{{$req->drop_off_time}}</th>
-            <th>{{$req->car_id}}</th>
-            <th>{{$req->sum_price}}</th>
-            <th>{{$req->full_name}}</th>
-            <th>{{$req->age}}</th>
-            <th>{{$req->email}}</th>
-            <th>{{$req->phone_num}}</th>
-            <th>{{$req->country}}</th>
-            <th>{{$req->message}}</th>
-        </tr>    
+            <th>Datum Ostavljanja</th>
+            <td>{{$req->drop_off_date}}</td>            
+        </tr>
+        <tr>
+            <th>Vrijeme Ostavljanja</th>
+            <td>{{$req->drop_off_time}}</td>
+        </tr>
+        <tr>
+            <th>ID auta</th>
+            <td>{{$req->car_id}}</td>
+        </tr>
+        <tr>
+            <th>Cijena</th>
+            <td>{{$req->sum_price}}</td>
+        </tr>
+        <tr>
+            <th>Ime i prezime</th>
+            <td>{{$req->full_name}}</td>
+        </tr>
+        <tr>
+            <th>Godiste</th>
+            <td>{{$req->age}}</td>
+        </tr>
+        <tr>
+            <th>Email</th>
+            <td>{{$req->email}}</td>
+        </tr>
+        <tr>
+            <th>Telefonski Broj</th>
+            <td>{{$req->phone_num}}</td>
+        </tr>
+        <tr>
+            <th>Zemlja</th>
+            <td>{{$req->country}}</td>
+        </tr>
+        <tr>
+            <th>Poruka</th>
+            <td>{{$req->message}}</td>
+        </tr>
     </table>
+
 </div>
 
 @endsection

@@ -134,6 +134,18 @@ class HomeController extends Controller
         ]);
         return back();
     }
+
+    public function returned($id)
+    {
+        $req=ProcessingRq::findOrFail($id);
+        Vehicle::findOrFail($req->car_id)->update([
+            "booked"=>false
+        ]);
+        $req->update([
+            "status"=>"Vracen"
+        ]);
+        return back();
+    }
     
     public function detailedview($id)
     {

@@ -26,14 +26,16 @@
                 @endif
             </th>
             <th>
-                <form action="/home/listCar/{{$item->id}}" method="get">
-                <button type="submit" class="btn btn-default">Uredi</button>
-                </form>
-                <form action="/home/listCar/{{$item->id}}" method="post">
-                    @csrf
-                    @method('DELETE')
-                    <button type="submit" class="btn btn-warning">Obrisi</button>
-                </form>
+                <div class="d-flex">
+                    <form action="/home/listCar/{{$item->id}}" method="get">
+                    <button type="submit" class="btn btn-default mx-3">Uredi</button>
+                    </form>
+                    <form action="/home/listCar/{{$item->id}}" method="post">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-warning">Obrisi</button>
+                    </form>
+                </div>
             </th>
         </tr>
         @endforeach
