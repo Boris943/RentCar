@@ -9,67 +9,19 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <!-- Styles -->
         <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
+            body{
+                background: url("/pictures/asphalt.jpg") center center no-repeat;
+                background-size:cover; 
                 height: 100vh;
-                margin: 0;
+                color: white;
             }
-
-            .greenyellow{
-                background-color: greenyellow;
+            h1{
+                font-size: 70px;
             }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            } 
-            </style>  
+        </style>  
     </head>
 
     <body>
@@ -84,47 +36,49 @@
          </div>
      @endif
  
-    <div class="d-flex">
-
-        <div class="position-ref full-height">
-            <div class="d-flex justify-content-between form-group">
+        <div class="d-flex">
+            <div class="mx-3 my-3">
+                Korak 1
                 <form action="/booking" method="post">
                     @csrf
-                    <div class="form-group my-3 mx-3">
-                        <label>Mjesto preuzimanja :</label>
-                        <input name="pick_up_location" class="form-control" type="text">
+                    <div class="my-3 mx-3">
+                        <label><strong> Mjesto preuzimanja :</strong></label>
+                        <input class="w-100" name="pick_up_location" type="text">
                     </div>
-                    <div class="form-group my-3 mx-3">
-                        <label>Mjesto Vracanja :</label>
-                        <input name="drop_off_location" class="form-control" type="text">
+                    <div class="my-3 mx-3">
+                        <label><strong> Mjesto Vracanja :</strong></label>
+                        <input class="w-100" name="drop_off_location" type="text">
                     </div>
-                    <div class="form-group my-3 mx-3">
-                        <label>Datum Preuzimanja :</label>
-                        <input onchange="myFunction()" id="mdi" name="pick_up_date" class="form-control" type="date">
+                    <div class="my-3 mx-3">
+                        <label><strong> Datum Preuzimanja :</strong></label>
+                        <input class="w-100" onchange="myFunction()" id="mdi" name="pick_up_date" type="date">
                     </div>
-                    <div class="form-group my-3 mx-3">
-                        <label>Datum Vracanja :</label>
-                        <input id="mdd" name="drop_off_date" class="form-control" type="date">
+                    <div class="my-3 mx-3">
+                        <label><strong> Datum Vracanja :</strong></label>
+                        <input class="w-100" id="mdd" name="drop_off_date" type="date">
                     </div>
-                    <div class="form-group my-3 mx-3">
-                        <label>Vrijeme Preuzimanja:</label>
-                        <input name="pick_up_time" class="form-control" type="time">
+                    <div class="my-3 mx-3">
+                        <label><strong> Vrijeme Preuzimanja:</strong></label>
+                        <input class="w-100" name="pick_up_time" type="time">
                     </div>
-                    <div class="form-group my-3 mx-3">
-                        <label>Vrijeme Vracanja:</label>
-                        <input name="drop_off_time" class="form-control" type="time">          
+                    <div class="my-3 mx-3">
+                        <label><strong> Vrijeme Vracanja:</strong></label>
+                        <input class="w-100" name="drop_off_time" type="time">          
                     </div>
                     <button type="submit" class=" my-3 mx-3 btn btn-primary">Potrazi vozilo</button>
                 </form>
             </div>
                  
+            <div>
+                <h1>Rent a Car</h1>
+                <a href="#" class="btn btn-primary">O nama</a>
+                <a href="#" class="btn btn-primary">Uslovi Rentiranja</a>
+            </div>
+        
         </div> 
 
-        <div class="float-right">
-            <h1>Rent a Car</h1>
-        </div>
-    </div>
         
+        <script src="{{ asset('js/app.js') }}" ></script>
         <script>
         var now = new Date(),
             minDate = now.toISOString().substring(0,10);
@@ -135,7 +89,6 @@
                 minDate = then.toISOString().substring(0,10);
                 $('#mdd').prop('min',minDate);
             } 
-        
         </script>
         </body>
 </html>

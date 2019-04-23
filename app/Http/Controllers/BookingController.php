@@ -81,9 +81,12 @@ class BookingController extends Controller
         $result = $endDate->diffInDays($startDate);
         
         $additions= Extras::find(request()->get("extras"));
-
-        $req["sum_price"] = $req["sum_price"] + $result * $additions->map->price->sum();
-        $req["extras"] = $additions->map->id;
+        
+        if($additions){
+            $req["sum_price"] = $req["sum_price"] + $result * $additions->map->price->sum();
+            $req["extras"] = $additions->map->id;
+        }
+        
         
         session()->put('step-1', $req);
 

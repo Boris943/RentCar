@@ -4,7 +4,7 @@
 <div class="container justify-content-center">
     <table class="table">
         <tr>
-            <th>ID</th>
+            <th>ID Zahtjeva</th>
             <th>Status</th>
             <th>Cijena</th>
             <th>Detaljniji info</th>
