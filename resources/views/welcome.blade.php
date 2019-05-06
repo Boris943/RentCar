@@ -70,9 +70,9 @@
             </div>
                  
             <div>
-                <h1>Rent a Car</h1>
-                <a href="#" class="btn btn-primary">O nama</a>
-                <a href="#" class="btn btn-primary">Uslovi Rentiranja</a>
+                <h3>Rent a Car</h3>
+                <a href="/aboutUs" class="btn btn-primary">O nama</a>
+                <a href="/rentalConditions" class="btn btn-primary">Uslovi Rentiranja</a>
             </div>
         
         </div> 

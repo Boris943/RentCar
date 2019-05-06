@@ -131,4 +131,15 @@ class BookingController extends Controller
 
         return redirect('/');
     }
+
+    public function rentalConditions()
+    {
+     return view('rentalConditions');   
+    }
+    
+    public function aboutUs()
+    {
+     return view('aboutUs');
+    }     
+        
 }

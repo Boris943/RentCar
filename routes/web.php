@@ -25,6 +25,8 @@ Route::post('/extras','BookingController@step2');
 Route::get('/vehicles/{id}','BookingController@step1');
 Route::get('/personalinfo','BookingController@personalInfo');
 Route::post('/final','BookingController@stepfin');
+Route::get('/aboutUs','BookingController@aboutUs');
+Route::get('/rentalConditions','BookingController@rentalConditions');
 
 Auth::routes([
     'register'=>false,
@@ -46,6 +48,8 @@ Route::group(['middleware'=>'auth'],function(){
     Route::post('/home/listReq/approved/{id}','HomeController@approved');
     Route::post('/home/listReq/returned/{id}','HomeController@returned');    
     Route::get('/home/listReq/detailedInfo/{id}','HomeController@detailedview');
+    Route::get('/settings','AdminSettings@settings');
+    Route::post("/home",'AdminSettings@adminSetup');
 });
 
 
